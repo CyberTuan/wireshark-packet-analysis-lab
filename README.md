@@ -1,4 +1,4 @@
-🦈 Beginner Wireshark Packet Capture Lab – Kali Linux + VirtualBox
+🦈 Beginner Wireshark Packet Capture Lab – Kali Linux +VirtualBox
 
 📌 Overview
 
@@ -54,9 +54,7 @@ Run:
 
 ping -c 5 google.com
 
-Filter in Wireshark:
-
-icmp
+Filter in Wireshark: icmp
 
 Observe Echo Request and Reply packets
 
@@ -66,9 +64,7 @@ Use a plain HTTP site like neverssl.com:
 
 curl http://neverssl.com
 
-Filter in Wireshark:
-
-http
+Filter in Wireshark: http
 
 Follow TCP stream and read full HTML response
 
@@ -78,15 +74,11 @@ Use:
 
 nslookup neverssl.com
 
-Filter in Wireshark:
-
-dns
+Filter in Wireshark: dns
 
 ✅ ARP
 
-Filter:
-
-arp
+Filter in Wireshark: arp
 
 Observe address resolution on LAN
 
