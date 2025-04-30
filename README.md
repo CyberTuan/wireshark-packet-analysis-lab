@@ -1,89 +1,97 @@
-# 🦈 Beginner Wireshark Packet Capture Lab – Kali Linux + VirtualBox
+🦈 Beginner Wireshark Packet Capture Lab – Kali Linux + VirtualBox
 
-## 📌 Overview
+📌 Overview
+
 This lab demonstrates how to capture and analyze real network traffic using Wireshark within a Kali Linux virtual machine running in VirtualBox. It was designed to help me learn the fundamentals of packet analysis, networking, and tool usage for cybersecurity.
 
----
+🧰 Tools & Environment
 
-## 🧰 Tools & Environment
-- Kali Linux (2025.1c, running in VirtualBox)
-- VirtualBox with Bridged Adapter networking
-- Wireshark 4.4.5 (run with sudo)
-- Terminal tools: `ping`, `curl`, `wget`, `ip route`, `nslookup`, `dhclient`
+Kali Linux (2025.1c, running in VirtualBox)
 
----
+VirtualBox with Bridged Adapter networking
 
-## 🛠️ Lab Setup
+Wireshark 4.4.5 (run with sudo)
 
-### 1. Install Kali Linux in VirtualBox
-- Download the Kali ISO
-- Create a VM in VirtualBox
-- Assign 2GB+ RAM and Bridged Adapter for networking
+Terminal tools: ping, curl, wget, ip route, nslookup, dhclient
 
-### 2. Configure Networking
-- Switch network adapter to **Bridged** in VirtualBox settings
-- Boot into Kali and verify network:
-  ```bash
-  ip a
-  ip route
-  ping -c 3 8.8.8.8
+🛠️ Lab Setup
+
+1. Install Kali Linux in VirtualBox
+
+Download the Kali ISO
+
+Create a VM in VirtualBox
+
+Assign 2GB+ RAM and Bridged Adapter for networking
+
+2. Configure Networking
+
+Switch network adapter to Bridged in VirtualBox settings
+
+Boot into Kali and verify network:
+
+ip a
+ip route
+ping -c 3 8.8.8.8
+
 If no connection:
 
-bash
-Copy
-Edit
 sudo dhclient eth0
+
 3. Launch Wireshark
+
 Run in background to avoid terminal lock:
 
-bash
-Copy
-Edit
 sudo -b wireshark
+
 Select active interface (e.g., eth0)
 
 📶 Packet Capture Tests
+
 ✅ ICMP (Ping)
-bash
-Copy
-Edit
+
+Run:
+
 ping -c 5 google.com
-Wireshark filter:
 
-nginx
-Copy
-Edit
+Filter in Wireshark:
+
 icmp
+
+Observe Echo Request and Reply packets
+
 ✅ HTTP Traffic
-bash
-Copy
-Edit
+
+Use a plain HTTP site like neverssl.com:
+
 curl http://neverssl.com
-Wireshark filter:
 
-nginx
-Copy
-Edit
+Filter in Wireshark:
+
 http
+
+Follow TCP stream and read full HTML response
+
 ✅ DNS Lookup
-bash
-Copy
-Edit
+
+Use:
+
 nslookup neverssl.com
-Wireshark filter:
 
-nginx
-Copy
-Edit
+Filter in Wireshark:
+
 dns
-✅ ARP
-Wireshark filter:
 
-nginx
-Copy
-Edit
+✅ ARP
+
+Filter:
+
 arp
+
+Observe address resolution on LAN
+
 🧠 Key Takeaways
+
 NAT hides traffic from packet sniffers; Bridged mode exposes real traffic
 
 GUI apps like Wireshark should be launched with sudo -b to avoid terminal blocking
@@ -92,7 +100,8 @@ HTTP traffic is readable in plain text; HTTPS is encrypted and not easily analyz
 
 DNS and ARP are great protocols for beginner visibility
 
-📸 Screenshots (optional)
+📸 Screenshots
+
 Interface setup
 
 ICMP packet view
@@ -101,7 +110,12 @@ HTTP stream with raw HTML
 
 DNS request/response pairs
 
+📂 All screenshots are available here: screenshots folder
+
+➡️ For potential employers or reviewers: This folder contains all visual evidence of the hands-on lab execution and verification of packet captures.
+
 🔚 Next Steps
+
 Capture FTP credentials in a lab
 
 Analyze HTTPS negotiation with TLS filter
@@ -111,17 +125,7 @@ Try MITM attack simulation with ettercap
 Create IDS alert rules based on traffic patterns
 
 ✍️ Author
-Tuan Ho – Cybersecurity student exploring hands-on labs and packet analysis.
-#OpenToVolunteering
 
-yaml
-Copy
-Edit
+Tuan Ho – Cybersecurity student exploring hands-on labs and packet analysis. [#OpenToVolunteering]
 
-
-
-📂 All screenshots are available here: screenshots folder: https://github.com/CyberTuan/wireshark-packet-analysis-lab/tree/main/screenshots
-➡️ For potential employers or reviewers: This folder contains all visual evidence of the hands-on lab execution and verification of packet captures.
-
-
-
+🔗 View this project on GitHub: github.com/CyberTuan/wireshark-packet-analysis-lab
