@@ -118,6 +118,4 @@ yaml
 Copy
 Edit
 
----
 
-Paste this into your `README.md`, commit, and you’re done. Want help linking images or adding a GitHub project board?
