@@ -119,3 +119,9 @@ Copy
 Edit
 
 
+
+📂 All screenshots are available here: screenshots folder: https://github.com/CyberTuan/wireshark-packet-analysis-lab/tree/main/screenshots
+➡️ For potential employers or reviewers: This folder contains all visual evidence of the hands-on lab execution and verification of packet captures.
+
+
+
