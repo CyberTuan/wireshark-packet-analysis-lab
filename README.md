@@ -27,34 +27,43 @@ This lab demonstrates how to capture and analyze real network traffic using Wire
   ip a
   ip route
   ping -c 3 8.8.8.8
-
-
 If no connection:
-// in bash
-sudo dhclient eth0
 
+bash
+Copy
+Edit
+sudo dhclient eth0
 3. Launch Wireshark
 Run in background to avoid terminal lock:
 
-//in bash
+bash
+Copy
+Edit
 sudo -b wireshark
 Select active interface (e.g., eth0)
 
 📶 Packet Capture Tests
 ✅ ICMP (Ping)
-//in bash
+bash
+Copy
+Edit
 ping -c 5 google.com
 Wireshark filter:
 
-nginx:
-
+nginx
+Copy
+Edit
 icmp
 ✅ HTTP Traffic
-in bash
+bash
+Copy
+Edit
 curl http://neverssl.com
 Wireshark filter:
 
 nginx
+Copy
+Edit
 http
 ✅ DNS Lookup
 bash
@@ -64,15 +73,16 @@ nslookup neverssl.com
 Wireshark filter:
 
 nginx
-
+Copy
+Edit
 dns
 ✅ ARP
 Wireshark filter:
 
 nginx
+Copy
+Edit
 arp
-
-
 🧠 Key Takeaways
 NAT hides traffic from packet sniffers; Bridged mode exposes real traffic
 
@@ -82,7 +92,23 @@ HTTP traffic is readable in plain text; HTTPS is encrypted and not easily analyz
 
 DNS and ARP are great protocols for beginner visibility
 
+📸 Screenshots (optional)
+Interface setup
 
+ICMP packet view
+
+HTTP stream with raw HTML
+
+DNS request/response pairs
+
+🔚 Next Steps
+Capture FTP credentials in a lab
+
+Analyze HTTPS negotiation with TLS filter
+
+Try MITM attack simulation with ettercap
+
+Create IDS alert rules based on traffic patterns
 
 ✍️ Author
 Tuan Ho – Cybersecurity student exploring hands-on labs and packet analysis.
@@ -94,3 +120,4 @@ Edit
 
 ---
 
+Paste this into your `README.md`, commit, and you’re done. Want help linking images or adding a GitHub project board?
